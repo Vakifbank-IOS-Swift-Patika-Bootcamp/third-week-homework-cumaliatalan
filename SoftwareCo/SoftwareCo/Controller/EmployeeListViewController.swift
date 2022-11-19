@@ -10,6 +10,7 @@ import UIKit
 class EmployeeListViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
+    
     var employeeList: [EmployeeModel] = []
     var employees : [EmployeeModel] = []
     
@@ -23,9 +24,12 @@ class EmployeeListViewController: UIViewController{
         
         employees = employeeList
         
-        let searchBar = UISearchController(searchResultsController: nil)
-        searchBar.searchBar.placeholder = "Type something to search"
-        navigationItem.searchController = searchBar
+        let searcBar = UISearchController(searchResultsController: nil)
+        searcBar.searchBar.placeholder = "Type something to search"
+        navigationItem.searchController = searcBar
+    }
+    @IBAction func backButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "back", sender: nil)
     }
 }
 

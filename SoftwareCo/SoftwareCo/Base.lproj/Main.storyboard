@@ -45,7 +45,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="list"/>
                                 <connections>
                                     <action selector="listButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3pV-AR-z7v"/>
-                                    <segue destination="akg-yZ-POx" kind="presentation" identifier="listSegue" modalPresentationStyle="fullScreen" id="TbT-vT-dYo"/>
+                                    <segue destination="akg-yZ-POx" kind="modal" identifier="listSegue" modalPresentationStyle="fullScreen" id="TbT-vT-dYo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-N2-PMN">
@@ -185,6 +185,17 @@
                                     <constraint firstAttribute="height" constant="366.32999999999998" id="X99-wU-zzx"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dv9-fC-fLR">
+                                <rect key="frame" x="16" y="47" width="78" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="Wf3-PY-ciw" eventType="touchUpInside" id="Gm1-6M-Jek"/>
+                                    <action selector="backButtonClicked:" destination="akg-yZ-POx" eventType="touchUpInside" id="qDy-dl-COZ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="back" modalPresentationStyle="fullScreen" id="iub-HN-TJj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tdq-Y4-v6O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -220,14 +231,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" id="WXi-be-Di2" customClass="TableViewCell" customModule="SoftwareCo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXi-be-Di2" id="LJK-0T-3Lj">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw9-7M-VsK">
-                                                    <rect key="frame" x="20" y="10.999999999999998" width="178" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="11" width="178" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -258,6 +269,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRN-CX-aaj">
+                                <rect key="frame" x="15" y="47" width="78" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="akg-yZ-POx" eventType="touchUpInside" id="hk0-Cq-YJb"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="back" modalPresentationStyle="fullScreen" id="8rm-sd-MN9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gnd-yC-mTX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -268,6 +289,7 @@
                             <constraint firstItem="Gnd-yC-mTX" firstAttribute="bottom" secondItem="7fl-i4-RHO" secondAttribute="bottom" id="w7z-ZW-xag"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2dT-8d-grg"/>
                     <connections>
                         <outlet property="tableView" destination="7fl-i4-RHO" id="e7T-UH-iCn"/>
                     </connections>
@@ -277,7 +299,11 @@
             <point key="canvasLocation" x="2080" y="-12.085308056872037"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iub-HN-TJj"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

@@ -44,6 +44,10 @@ class addEmployeeViewController: UIViewController {
         self.employeeList.append(employee)
 
     }
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+    }
+    
     @IBAction func addButtonClicked(_ sender: Any) {
         self.addEmployee()
     }
