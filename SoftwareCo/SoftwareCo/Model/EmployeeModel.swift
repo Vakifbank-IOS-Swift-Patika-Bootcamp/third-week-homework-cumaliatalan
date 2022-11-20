@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+// calisan bilgileri struct model icerisinde verilir.
 struct EmployeeModel {
     var name: String
     var age : Int
@@ -14,6 +16,7 @@ struct EmployeeModel {
 }
 
 extension EmployeeModel {
+    // calisanlarin maaslarinin hesaplandigi fonksiyon
     func calculateSalary(salaryBase: Double) -> Double {
         var salary = self.salaryBase
         salary = salary * Double(experience) * Double(age)

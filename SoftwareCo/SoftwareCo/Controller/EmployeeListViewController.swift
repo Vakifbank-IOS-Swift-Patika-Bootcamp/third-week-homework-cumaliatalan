@@ -19,17 +19,19 @@ class EmployeeListViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tableview tanimlanir.
         tableView.delegate = self
         tableView.dataSource = self
         
         employees = employeeList
         
-        let searcBar = UISearchController(searchResultsController: nil)
+        let searcBar = UISearchController(searchResultsController: nil) // calismiyor neden?
         searcBar.searchBar.placeholder = "Type something to search"
         navigationItem.searchController = searcBar
     }
+    
     @IBAction func backButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "back", sender: nil)
+        performSegue(withIdentifier: "back", sender: nil) // geri donulmek istenirse back button
     }
 }
 
@@ -51,10 +53,13 @@ extension EmployeeListViewController: UITableViewDelegate {
 }
 
 extension EmployeeListViewController: UITableViewDataSource {
+    
+    // row sayisi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         employeeList.count
     }
     
+    // cell icerikleri listeden alinip tableview'a yazilir.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         cell.nameLabel.text = employeeList[indexPath.row].name
